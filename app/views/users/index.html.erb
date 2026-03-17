@@ -1,8 +1,6 @@
 <h1>ユーザ一覧</h1>
 <hr>
 <% @users.each do |user| %>
-<p>名前：<%= user.id %></p>
-<p>名前：<%= user.name %></p>
-<p>メールアドレス：<%= user.email %></p>
-<hr>
+  <p>名前：<%= link_to user.name, user_path(user) %></p>
+  <hr>
 <% end %>
