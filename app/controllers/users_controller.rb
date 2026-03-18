@@ -5,7 +5,10 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def show; end
+  def show
+    @ideal_weight = calc_ideal_weight(@user.height)
+    @apple_weight_count = convert_height_to_apple_weight(@user.height)
+  end
 
   def new
     @user = User.new
@@ -33,17 +36,35 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
-    redirect_to users_path, status: :see_other
+    @user.destroy!
+    redirect_to users_path, status: :see_other, notice: 'ユーザを削除しました'
   end
 
   private
+
+  # 定数：りんごの重さ300g/個 あとでデータベース化する予定
+  APPLE_WEIGHT = 300
+
+  def convert_height_to_apple_weight(height)
+    if !height.nil?
+      weight = height * height * 22 / 10 # 体重をg換算
+      return (weight / APPLE_WEIGHT).round
+    end
+    return ' -- '
+  end
+
+  def calc_ideal_weight(height)
+    if !height.nil?
+      return (height * height * 22 / 10000).round(1)
+    end
+    return ' -- '
+  end
 
   def set_user
     @user = User.find(params[:id])
   end
 
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :height)
   end
 end
