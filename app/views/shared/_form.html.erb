@@ -7,5 +7,9 @@
     <%= f.label :email, 'メールアドレス：' %>
     <%= f.email_field :email %>
   </div>
+  <div>
+    <%= f.label :height, '身長：' %>
+    <%= f.number_field :height, step: '0.1' %>
+  </div>
   <%= f.submit %>
 <% end %>
