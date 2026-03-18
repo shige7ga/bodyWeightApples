@@ -33,8 +33,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
-    redirect_to users_path, status: :see_other
+    @user.destroy!
+    redirect_to users_path, status: :see_other, notice: 'ユーザを削除しました'
   end
 
   private
