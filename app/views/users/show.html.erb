@@ -1,9 +1,12 @@
 <h1>ユーザ詳細</h1>
-<p>ID：<%= @user.id %></p>
 <p>ユーザ名：<%= @user.name %></p>
-<p>メールアドレス：<%= @user.email %></p>
+<% if current_user?(@user) %>
+  <p>メールアドレス：<%= @user.email %></p>
+<% end %>
 <p>身長：<%= @user.height ? "#{@user.height}" : " -- " %>cm</p>
-<p>理想リンゴ体重：<%= @apple_weight_count %>個（<%= @ideal_weight %>kg）</p>
-<p></p>
-<%= link_to '編集', edit_user_path(@user), class: 'btn btn-primary' %>
-<%= link_to '削除', user_path(@user), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: 'btn btn-primary' %>
+<p>理想リンゴ体重：<%= @user.ideal_apple_weight %>個（<%= @user.ideal_weight %>kg）</p>
+
+<% if current_user?(@user) %>
+  <%= link_to '編集', edit_user_path(@user), class: 'btn btn-primary' %>
+  <%= link_to '削除', user_path(@user), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: 'btn btn-primary' %>
+<% end %>

@@ -11,5 +11,13 @@
     <%= f.label :height, '身長：' %>
     <%= f.number_field :height, step: '0.1' %>
   </div>
-  <%= f.submit %>
+  <div>
+    <%= f.label :password, 'パスワード：' %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation, 'パスワード確認：' %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <%= f.submit class: 'btn btn-primary' %>
 <% end %>
