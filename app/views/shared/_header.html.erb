@@ -1,12 +1,18 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <%= link_to 'BodyApple', users_path, class: 'navbar-brand ps-2' %>
+    <%= link_to 'リンゴで体重管理', users_path, class: 'navbar-brand ps-2' %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto text-center mb-2 mb-lg-0">
         <% if logged_in? %>
+          <li class="nav-item">
+            <%= link_to '体重記録一覧', weight_records_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to '体重登録', new_weight_record_path, class: 'nav-link' %>
+          </li>
           <li class="nav-item">
             <%= link_to 'ユーザ一覧', users_path, class: 'nav-link' %>
           </li>
