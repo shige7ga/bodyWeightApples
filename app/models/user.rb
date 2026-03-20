@@ -15,9 +15,6 @@ class User < ApplicationRecord
   has_secure_password
   has_many :weight_records, dependent: :destroy
 
-  # 定数：りんごの重さ300g/個 あとでデータベース化する予定
-  APPLE_WEIGHT = 300
-
   def ideal_apple_weight
     if !self.height.nil?
       weight = self.height * self.height * 22 / 10 # 体重をg換算

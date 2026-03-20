@@ -8,6 +8,12 @@
       <ul class="navbar-nav ms-auto text-center mb-2 mb-lg-0">
         <% if logged_in? %>
           <li class="nav-item">
+            <%= link_to '体重記録一覧', weight_records_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to '体重登録', new_weight_record_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
             <%= link_to 'ユーザ一覧', users_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
