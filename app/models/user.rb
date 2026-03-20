@@ -13,6 +13,7 @@ class User < ApplicationRecord
     validates :password, confirmation: true, length: { minimum: 8, maximum: 32 }, presence: true
 
   has_secure_password
+  has_many :weight_records, dependent: :destroy
 
   # 定数：りんごの重さ300g/個 あとでデータベース化する予定
   APPLE_WEIGHT = 300
