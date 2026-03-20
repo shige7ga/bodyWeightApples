@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: [:index, :show, :new, :create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+  before_action :ensure_user_authorized, only: [:edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -45,8 +45,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def ensure_correct_user
-    redirect_to root_path, alert: '権限がありません' unless current_user?(@user)
+  def ensure_user_authorized
+    ensure_correct_user(@user)
   end
 
   def user_params
