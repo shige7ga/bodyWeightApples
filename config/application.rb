@@ -8,11 +8,11 @@ Bundler.require(*Rails.groups)
 
 module Myapp
   class Application < Rails::Application
-    config.time_zone = 'Tokyo'
+    config.time_zone = "Tokyo"
 
     # デフォルトのlocaleを日本語(:ja)にする
     config.i18n.default_locale = :ja
-    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+    config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**", "*.{rb,yml}").to_s]
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.2
 
@@ -28,5 +28,13 @@ module Myapp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Don't generate system test files.
+    config.generators.system_tests = nil
+    config.generators do |g|
+      g.skip_routes true
+      g.helper false
+      g.test_framework nil
+    end
   end
 end

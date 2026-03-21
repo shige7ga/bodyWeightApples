@@ -20,19 +20,28 @@ ja:
     updated_at: 更新日
   users:
     create:
-      notice: 'ユーザーを登録しました'
-      alert: 'ユーザー登録に失敗しました'
+      success: 'ユーザーを登録しました'
+      danger: 'ユーザー登録に失敗しました'
     update:
-      notice: 'ユーザー情報を編集しました'
-      alert: 'ユーザー情報の編集に失敗しました'
+      success: 'ユーザー情報を編集しました'
+      danger: 'ユーザー情報の編集に失敗しました'
     destroy:
-      notice: 'ユーザーを削除しました'
+      success: 'ユーザーを削除しました'
   weight_records:
     create:
-      notice: '体重を記録しました'
-      alert: '体重の記録に失敗しました'
+      success: '体重を記録しました'
+      danger: '体重の記録に失敗しました'
     update:
-      notice: '体重の記録を編集しました'
-      alert: '体重の記録の編集に失敗しました'
+      success: '体重の記録を編集しました'
+      danger: '体重の記録の編集に失敗しました'
     destroy:
-      notice: '体重記録を削除しました'
+      success: '体重記録を削除しました'
+  sessions:
+    create:
+      success: 'ログインしました'
+      danger: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
+  flash:
+    authorization:
+      denied: '権限がありません'

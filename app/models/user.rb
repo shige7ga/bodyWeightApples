@@ -5,7 +5,7 @@ class User < ApplicationRecord
     numericality: true,
     format: {
       with: /\A\d{1,3}(\.\d)?\z/,
-      message: 'は整数3桁まで、小数1桁までで入力してください（例：165.5）'
+      message: "は整数3桁まで、小数1桁までで入力してください（例：165.5）"
     },
     allow_nil: true
 

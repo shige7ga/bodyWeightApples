@@ -2,6 +2,9 @@ class ApplicationController < ActionController::Base
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
 
+  # フラッシュメッセージにsuccess, dangerというキーを追加
+  add_flash_types :success, :danger
+
   # データが存在しないエラー発生時の処理
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
@@ -26,7 +29,7 @@ class ApplicationController < ActionController::Base
   end
 
   def ensure_correct_user(user)
-    redirect_to root_path, alert: '権限がありません' unless current_user?(user)
+    redirect_to root_path, danger: t("flash.authorization.denied") unless current_user?(user)
   end
 
   private
@@ -36,6 +39,6 @@ class ApplicationController < ActionController::Base
   end
 
   def not_found
-    redirect_to root_path, alert: '権限がありません'
+    redirect_to root_path, danger: t("flash.authorization.denied")
   end
 end
