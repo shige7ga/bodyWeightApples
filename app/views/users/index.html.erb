@@ -1,4 +1,4 @@
-<h1>ユーザ一覧</h1>
+<h1><%= t '.title' %></h1>
 <hr>
 <% @users.each do |user| %>
   <p>ユーザ名：<%= link_to user.name, user_path(user) %>  |  理想リンゴ体重：<%= user.ideal_apple_weight %>個</p>

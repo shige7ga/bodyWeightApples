@@ -9,6 +9,10 @@ Bundler.require(*Rails.groups)
 module Myapp
   class Application < Rails::Application
     config.time_zone = 'Tokyo'
+
+    # デフォルトのlocaleを日本語(:ja)にする
+    config.i18n.default_locale = :ja
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.2
 

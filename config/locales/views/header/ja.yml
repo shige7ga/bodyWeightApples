@@ -1,0 +1,10 @@
+ja:
+  shared:
+    header:
+      weight_record_index: 体重記録一覧
+      weight_record_new: 体重登録
+      user_new: ユーザー登録
+      users_index: ユーザー一覧
+      mypage: マイページ
+      login: ログイン
+      logout: ログアウト

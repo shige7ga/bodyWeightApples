@@ -1,0 +1,12 @@
+ja:
+  weight_records:
+    index:
+      title: '体重記録一覧'
+    new:
+      title: '体重記録 - 登録'
+    show:
+      title: '体重記録 - 詳細'
+      edit_btn: '編集'
+      destroy_btn: '削除'
+    edit:
+      title: '体重記録 - 編集'

@@ -1,4 +1,4 @@
-<h1>ユーザ編集</h1>
+<h1><%= t ".title", user_name: current_user.name %></h1>
 
 <%= render 'shared/errors', object: @user %>
 <%= render 'shared/users/form', user: @user %>

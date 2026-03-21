@@ -1,0 +1,13 @@
+ja:
+  users:
+    index:
+      title: 'ユーザー一覧'
+    show:
+      title: '%{user_name}さんのユーザ情報'
+      edit_btn: 'ユーザー編集'
+      destroy_btn: 'ユーザー削除'
+    new:
+      title: 'ユーザ登録'
+      to_login_page: 'アカウントをお持ちの方はこちら'
+    edit:
+      title: '編集画面：%{user_name}さんのユーザ情報'

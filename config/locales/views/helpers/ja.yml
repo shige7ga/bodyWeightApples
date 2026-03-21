@@ -1,0 +1,8 @@
+ja:
+  helpers:
+    submit:
+      create: 登録
+      update: 更新
+    label:
+      email: メールアドレス
+      password: パスワード
