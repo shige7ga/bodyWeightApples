@@ -1,23 +1,26 @@
 <%= form_with model: user do |f| %>
-  <div>
-    <%= f.label :name, 'ユーザ名：' %>
-    <%= f.text_field :name %>
+  <div class="mb-2">
+    <%= f.label :name, class: 'form-label' %>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
-  <div>
-    <%= f.label :email, 'メールアドレス：' %>
-    <%= f.email_field :email %>
+  <div class="mb-2">
+    <%= f.label :email, class: 'form-label' %>
+    <%= f.email_field :email, class: 'form-control' %>
   </div>
-  <div>
-    <%= f.label :height, '身長：' %>
-    <%= f.number_field :height, step: '0.1' %>
+  <div class="mb-2">
+    <%= f.label :height, class: 'form-label' %>
+    <%= f.number_field :height, step: '0.1', class: 'form-control' %>
+    <div class="form-text ms-2">
+      ※身長は「cm」で、小数点1桁まで入力してください（例: 165.5）
+    </div>
   </div>
-  <div>
-    <%= f.label :password, 'パスワード：' %>
-    <%= f.password_field :password %>
+  <div class="mb-2">
+    <%= f.label :password, class: 'form-label' %>
+    <%= f.password_field :password, class: 'form-control' %>
   </div>
-  <div>
-    <%= f.label :password_confirmation, 'パスワード確認：' %>
-    <%= f.password_field :password_confirmation %>
+  <div class="mb-2">
+    <%= f.label :password_confirmation, class: 'form-label' %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
   </div>
-  <%= f.submit class: 'btn btn-primary' %>
+  <%= f.submit class: 'btn btn-primary mb-3' %>
 <% end %>

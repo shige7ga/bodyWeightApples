@@ -14,9 +14,9 @@ class WeightRecordsController < ApplicationController
   def create
     @weight_record = current_user.weight_records.build(weight_record_params)
     if @weight_record.save
-      redirect_to weight_records_path, notice: '体重記録の登録を完了しました'
+      redirect_to weight_records_path, notice: t(".notice")
     else
-      flash.now[:danger] = '体重記録の登録に失敗しました'
+      flash.now[:danger] = t(".alert")
       render 'new', status: :unprocessable_entity
     end
   end
@@ -31,16 +31,16 @@ class WeightRecordsController < ApplicationController
 
   def update
     if @weight_record.update(weight_record_params)
-      redirect_to weight_record_path(@weight_record), notice: '体重記録を編集しました'
+      redirect_to weight_record_path(@weight_record), notice: t(".notice")
     else
-      flash.now[:danger] = '編集に失敗しました'
-      render 'edit', status: :upprocessable_entity
+      flash.now[:danger] = t(".alert")
+      render 'edit', status: :unprocessable_entity
     end
   end
 
   def destroy
     @weight_record.destroy!
-    redirect_to user_path(current_user), status: :see_other, notice: '記録を削除しました'
+    redirect_to user_path(current_user), status: :see_other, notice: t(".notice")
   end
 
 

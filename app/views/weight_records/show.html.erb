@@ -1,12 +1,12 @@
-<h1>体重記録 詳細</h1>
-<p>体重： リンゴ<%= @weight_record.apple_weight %>個分 （<%= @weight_record.weight %>kg）</p>
+<h1><%= t('.title') %></h1>
+<p>体重： リンゴ<%= @weight_record.decorate.apple_weight %>個分 （<%= @weight_record.weight %>kg）</p>
 <p>コメント：<%= @weight_record.comment ? "#{@weight_record.comment}" : " -- " %></p>
 
-<p>理想リンゴ体重：<%= @weight_record.compare_ideal_current_apple_weight %></p>
+<p>理想リンゴ体重：<%= @weight_record.decorate.compare_ideal_current_apple_weight %></p>
 
 <p>登録日時：<%= @weight_record.created_at.strftime("%Y/%m/%d %H:%M") %></p>
 
 <% if current_user?(@weight_record.user) %>
-  <%= link_to '編集', edit_weight_record_path(@weight_record), class: 'btn btn-primary' %>
-  <%= link_to '削除', weight_record_path(@weight_record), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: 'btn btn-primary' %>
+  <%= link_to t('.edit_btn'), edit_weight_record_path(@weight_record), class: 'btn btn-primary' %>
+  <%= link_to t('.destroy_btn'), weight_record_path(@weight_record), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: 'btn btn-primary' %>
 <% end %>

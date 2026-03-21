@@ -16,9 +16,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to users_path, notice: 'ユーザ登録が完了しました'
+      redirect_to users_path, notice: t(".notice")
     else
-      flash.now[:danger] = 'ユーザ登録に失敗しました'
+      flash.now[:danger] = t(".alert")
       render 'new', status: :unprocessable_entity
     end
   end
@@ -27,9 +27,9 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to user_path(@user), notice: 'ユーザ情報を編集しました'
+      redirect_to user_path(@user), notice: t(".notice")
     else
-      flash.now[:danger] = '編集に失敗しました'
+      flash.now[:danger] = t(".alert")
       render 'edit', status: :unprocessable_entity
     end
   end

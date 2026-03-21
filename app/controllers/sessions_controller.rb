@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to user_path(user), notice: 'ログインしました'
     else
       flash.now[:alert] = 'ログインに失敗しました'
-      render 'new', status: :upprocessable_entity
+      render 'new', status: :unprocessable_entity
     end
   end
 

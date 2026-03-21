@@ -1,4 +1,5 @@
-<h1>ユーザ登録</h1>
+<h1><%= t('.title') %></h1>
 
 <%= render 'shared/errors', object: @user %>
 <%= render 'shared/users/form', user: @user %>
+<%= link_to t('.to_login_page'), login_path %>

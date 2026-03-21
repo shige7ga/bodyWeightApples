@@ -9,25 +9,9 @@ class User < ApplicationRecord
     },
     allow_nil: true
 
-    # password validation(create時、入力必須)
-    validates :password, confirmation: true, length: { minimum: 8, maximum: 32 }, presence: true
+  # password validation(create時、入力必須)
+  validates :password, confirmation: true, length: { minimum: 8, maximum: 32 }, presence: true
 
   has_secure_password
   has_many :weight_records, dependent: :destroy
-
-  def ideal_apple_weight
-    if !self.height.nil?
-      weight = self.height * self.height * 22 / 10 # 体重をg換算
-      return (weight / APPLE_WEIGHT).round
-    end
-    return ' -- '
-  end
-
-  def ideal_weight
-    if !self.height.nil?
-      return (self.height * self.height * 22 / 10000).round(1)
-    end
-    return ' -- '
-  end
-
 end

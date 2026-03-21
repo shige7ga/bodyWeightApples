@@ -1,0 +1,6 @@
+ja:
+  sessions:
+    new:
+      title: ログイン画面
+      login: ログイン
+      to_register_page: アカウントをお持ちでない方はこちら

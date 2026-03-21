@@ -8,26 +8,26 @@
       <ul class="navbar-nav ms-auto text-center mb-2 mb-lg-0">
         <% if logged_in? %>
           <li class="nav-item">
-            <%= link_to '体重記録一覧', weight_records_path, class: 'nav-link' %>
+            <%= link_to t('.weight_record_index'), weight_records_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to '体重登録', new_weight_record_path, class: 'nav-link' %>
+            <%= link_to t('.weight_record_new'), new_weight_record_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to 'ユーザ一覧', users_path, class: 'nav-link' %>
+            <%= link_to t('.users_index'), users_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to 'マイページ', user_path(current_user), class: 'nav-link' %>
+            <%= link_to t('.mypage'), user_path(current_user), class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete }, class: 'nav-link' %>
+            <%= link_to t('.logout'), logout_path, data: { turbo_method: :delete }, class: 'nav-link' %>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to 'ユーザ登録', new_user_path, class: 'nav-link' %>
+            <%= link_to t('.user_new'), new_user_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to 'ログイン', login_path, class: 'nav-link' %>
+            <%= link_to t('.login'), login_path, class: 'nav-link' %>
           </li>
         <% end %>
       </ul>
