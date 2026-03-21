@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :require_login, only: [:new, :create]
+  skip_before_action :require_login, only: [ :new, :create ]
 
   def new; end
 
@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to user_path(user), success: t(".notice")
     else
       flash.now[:danger] = t(".danger")
-      render 'new', status: :unprocessable_entity
+      render "new", status: :unprocessable_entity
     end
   end
 

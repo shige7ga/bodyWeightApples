@@ -1,7 +1,7 @@
 class WeightRecordsController < ApplicationController
-  skip_before_action :require_login, only: [:index, :show]
-  before_action :set_weight_record, only: [:show, :edit, :update, :destroy]
-  before_action :ensure_user_authorized, only: [:edit, :update, :destroy]
+  skip_before_action :require_login, only: [ :index, :show ]
+  before_action :set_weight_record, only: [ :show, :edit, :update, :destroy ]
+  before_action :ensure_user_authorized, only: [ :edit, :update, :destroy ]
 
   def index
     @weight_records = WeightRecord.includes(:user).order(created_at: :desc)
@@ -17,7 +17,7 @@ class WeightRecordsController < ApplicationController
       redirect_to weight_records_path, success: t(".success")
     else
       flash.now[:danger] = t(".danger")
-      render 'new', status: :unprocessable_entity
+      render "new", status: :unprocessable_entity
     end
   end
 
@@ -30,7 +30,7 @@ class WeightRecordsController < ApplicationController
       redirect_to weight_record_path(@weight_record), success: t(".success")
     else
       flash.now[:danger] = t(".danger")
-      render 'edit', status: :unprocessable_entity
+      render "edit", status: :unprocessable_entity
     end
   end
 
@@ -38,7 +38,6 @@ class WeightRecordsController < ApplicationController
     @weight_record.destroy!
     redirect_to user_path(current_user), status: :see_other, success: t(".success")
   end
-
 
   private
 
@@ -53,5 +52,4 @@ class WeightRecordsController < ApplicationController
   def weight_record_params
     params.require(:weight_record).permit(:weight, :comment)
   end
-
 end

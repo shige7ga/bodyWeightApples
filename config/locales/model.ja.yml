@@ -42,3 +42,6 @@ ja:
       danger: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
+  flash:
+    authorization:
+      denied: '権限がありません'

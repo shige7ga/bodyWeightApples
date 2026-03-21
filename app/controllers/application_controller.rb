@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
   end
 
   def ensure_correct_user(user)
-    redirect_to root_path, alert: '権限がありません' unless current_user?(user)
+    redirect_to root_path, danger: t("flash.authorization.denied") unless current_user?(user)
   end
 
   private
@@ -39,6 +39,6 @@ class ApplicationController < ActionController::Base
   end
 
   def not_found
-    redirect_to root_path, alert: '権限がありません'
+    redirect_to root_path, danger: t("flash.authorization.denied")
   end
 end
