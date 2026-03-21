@@ -1,8 +1,8 @@
 <h1><%= t('.title') %></h1>
-<p>体重： リンゴ<%= @weight_record.apple_weight %>個分 （<%= @weight_record.weight %>kg）</p>
+<p>体重： リンゴ<%= @weight_record.decorate.apple_weight %>個分 （<%= @weight_record.weight %>kg）</p>
 <p>コメント：<%= @weight_record.comment ? "#{@weight_record.comment}" : " -- " %></p>
 
-<p>理想リンゴ体重：<%= @weight_record.compare_ideal_current_apple_weight %></p>
+<p>理想リンゴ体重：<%= @weight_record.decorate.compare_ideal_current_apple_weight %></p>
 
 <p>登録日時：<%= @weight_record.created_at.strftime("%Y/%m/%d %H:%M") %></p>
 

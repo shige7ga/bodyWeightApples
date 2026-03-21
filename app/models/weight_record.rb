@@ -10,24 +10,4 @@ class WeightRecord < ApplicationRecord
   validates :comment, length: { maximum: 2000 }
 
   belongs_to :user
-
-  def apple_weight
-    gram_weight = self.weight * 1000 #g換算
-    return (gram_weight / APPLE_WEIGHT).round
-  end
-
-  def gap_apple_weight(compared_weight)
-    # 現在のリンゴ数 - 目的のリンゴ数 → -だと達成
-    self.apple_weight - compared_weight
-  end
-
-  def compare_ideal_current_apple_weight
-    gap = gap_apple_weight(self.user.ideal_apple_weight)
-    if gap <= 0
-      return '達成！！！'
-    else
-      return '達成まであと' + gap.to_s + '個分！！！'
-    end
-  end
-
 end
