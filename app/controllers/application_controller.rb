@@ -2,6 +2,9 @@ class ApplicationController < ActionController::Base
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
 
+  # フラッシュメッセージにsuccess, dangerというキーを追加
+  add_flash_types :success, :danger
+
   # データが存在しないエラー発生時の処理
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 

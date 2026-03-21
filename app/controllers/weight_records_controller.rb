@@ -14,33 +14,29 @@ class WeightRecordsController < ApplicationController
   def create
     @weight_record = current_user.weight_records.build(weight_record_params)
     if @weight_record.save
-      redirect_to weight_records_path, notice: t(".notice")
+      redirect_to weight_records_path, success: t(".success")
     else
-      flash.now[:danger] = t(".alert")
+      flash.now[:danger] = t(".danger")
       render 'new', status: :unprocessable_entity
     end
   end
 
-  def show
+  def show; end
 
-  end
-
-  def edit
-
-  end
+  def edit; end
 
   def update
     if @weight_record.update(weight_record_params)
-      redirect_to weight_record_path(@weight_record), notice: t(".notice")
+      redirect_to weight_record_path(@weight_record), success: t(".success")
     else
-      flash.now[:danger] = t(".alert")
+      flash.now[:danger] = t(".danger")
       render 'edit', status: :unprocessable_entity
     end
   end
 
   def destroy
     @weight_record.destroy!
-    redirect_to user_path(current_user), status: :see_other, notice: t(".notice")
+    redirect_to user_path(current_user), status: :see_other, success: t(".success")
   end
 
 

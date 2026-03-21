@@ -16,9 +16,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to users_path, notice: t(".notice")
+      redirect_to users_path, success: t(".success")
     else
-      flash.now[:danger] = t(".alert")
+      flash.now[:danger] = t(".danger")
       render 'new', status: :unprocessable_entity
     end
   end
@@ -27,16 +27,16 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to user_path(@user), notice: t(".notice")
+      redirect_to user_path(@user), success: t(".success")
     else
-      flash.now[:danger] = t(".alert")
+      flash.now[:danger] = t(".danger")
       render 'edit', status: :unprocessable_entity
     end
   end
 
   def destroy
     @user.destroy!
-    redirect_to users_path, status: :see_other, notice: 'ユーザを削除しました'
+    redirect_to users_path, status: :see_other, success: 'ユーザを削除しました'
   end
 
   private

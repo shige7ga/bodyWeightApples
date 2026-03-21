@@ -9,11 +9,11 @@ class WeightRecordDecorator < Draper::Decorator
   # 現在体重と比較する体重の差を出力
   def gap_apple_weight(compared_weight)
     # 現在のリンゴ数 - 目的のリンゴ数 → -だと達成
-    object.apple_weight - compared_weight
+    apple_weight - compared_weight
   end
 
   def compare_ideal_current_apple_weight
-    gap = gap_apple_weight(object.user.ideal_apple_weight)
+    gap = gap_apple_weight(object.user.decorate.ideal_apple_weight)
     if gap <= 0
       return '達成！！！'
     else

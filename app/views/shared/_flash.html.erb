@@ -1,6 +1,6 @@
 <% if flash.any? %>
   <% flash.each do |message_type, message| %>
-    <div class="flash alert-success alert-<%= message_type %> alert">
+    <div class="flash alert-<%= message_type %> alert">
       <%= message %>
     </div>
   <% end %>
