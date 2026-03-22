@@ -1,3 +1,4 @@
+<% content_for(:title, t('.title', user_name: @user.name)) %>
 <h1><%= t ".title", user_name: current_user.name %></h1>
 
 <%= render 'shared/errors', object: @user %>

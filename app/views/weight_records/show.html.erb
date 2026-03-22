@@ -1,3 +1,4 @@
+<% content_for(:title, t('.title')) %>
 <h1><%= t('.title') %></h1>
 <p>体重： リンゴ<%= @weight_record.decorate.apple_weight %>個分 （<%= @weight_record.weight %>kg）</p>
 <p>コメント：<%= @weight_record.comment ? "#{@weight_record.comment}" : " -- " %></p>

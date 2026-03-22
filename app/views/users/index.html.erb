@@ -1,3 +1,4 @@
+<% content_for(:title, t('.title')) %>
 <h1><%= t '.title' %></h1>
 <hr>
 <% @users.each do |user| %>
@@ -8,7 +9,7 @@
       </div>
       <div class="col-10">
         <h2 class="fs-3 mb-3"><%= link_to user.name, user_path(user) %></h2>
-        <p>＜リンゴ体重＞ 理想：<%= user.decorate.ideal_apple_weight %>個 ｜ 最新：<%= user.decorate.latest_apple_weight %></p>
+        <p>＜リンゴ体重＞ 理想：<%= user.decorate.ideal_apple_weight %>個 ｜ 最新：<%= user.decorate.latest_apple_weight %>個</p>
       </div>
     </div>
   </div>
