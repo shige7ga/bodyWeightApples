@@ -12,6 +12,7 @@ class User < ApplicationRecord
   # password validation(create時、入力必須)
   validates :password, confirmation: true, length: { minimum: 8, maximum: 32 }, presence: true
 
+  mount_uploader :avatar, AvatarUploader
   has_secure_password
   has_many :weight_records, dependent: :destroy
 end

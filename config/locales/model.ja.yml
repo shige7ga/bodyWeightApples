@@ -12,6 +12,7 @@ ja:
         password_digest: パスワード
         password: パスワード
         password_confirmation: パスワード確認
+        avatar: アバター
       weight_record:
         weight: 体重
         comment: コメント
