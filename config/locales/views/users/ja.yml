@@ -4,8 +4,8 @@ ja:
       title: 'ユーザー一覧'
     show:
       title: '%{user_name}さんのユーザ情報'
-      edit_btn: 'ユーザー編集'
-      destroy_btn: 'ユーザー削除'
+      edit_btn: '編集'
+      destroy_btn: '削除'
     new:
       title: 'ユーザ登録'
       to_login_page: 'アカウントをお持ちの方はこちら'
