@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   resources :users
-  resources :weight_records
+  resources :weight_records do
+    resources :comments, only: [ :create, :edit, :destroy ], shallow: true
+  end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

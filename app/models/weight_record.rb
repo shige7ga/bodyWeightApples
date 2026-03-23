@@ -7,7 +7,8 @@ class WeightRecord < ApplicationRecord
       message: "は整数3桁まで、小数1桁までで入力してください（例：62.7）"
     }
 
-  validates :comment, length: { maximum: 2000 }
+  validates :memo, length: { maximum: 2000 }
 
   belongs_to :user
+  has_many :comments, dependent: :destroy
 end
