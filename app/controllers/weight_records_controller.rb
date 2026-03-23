@@ -50,6 +50,6 @@ class WeightRecordsController < ApplicationController
   end
 
   def weight_record_params
-    params.require(:weight_record).permit(:weight, :comment)
+    params.require(:weight_record).permit(:weight, :memo)
   end
 end

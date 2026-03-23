@@ -1,7 +1,7 @@
 <% content_for(:title, t('.title')) %>
 <h1><%= t('.title') %></h1>
 <p>体重： リンゴ<%= @weight_record.decorate.apple_weight %>個分 （<%= @weight_record.weight %>kg）</p>
-<p>コメント：<%= @weight_record.comment ? "#{@weight_record.comment}" : " -- " %></p>
+<p>コメント：<%= @weight_record.memo ? "#{@weight_record.memo}" : " -- " %></p>
 
 <p>理想リンゴ体重：<%= @weight_record.decorate.compare_ideal_current_apple_weight %></p>
 
