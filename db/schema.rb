@@ -30,7 +30,7 @@ ActiveRecord::Schema[7.2].define(version: 2026_03_23_102944) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "height", precision: 4, scale: 1
-    t.string "password_digest", null: false
+    t.string "password_digest"
     t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
   end

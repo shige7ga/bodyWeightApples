@@ -1,7 +1,7 @@
 <% content_for(:title, t('.title')) %>
 <h1><%= t('.title') %></h1>
 <p>体重： リンゴ<%= @weight_record.decorate.apple_weight %>個分 （<%= @weight_record.weight %>kg）</p>
-<p>コメント：<%= @weight_record.memo ? "#{@weight_record.memo}" : " -- " %></p>
+<p>メモ：<%= @weight_record.memo ? "#{@weight_record.memo}" : " -- " %></p>
 
 <p>理想リンゴ体重：<%= @weight_record.decorate.compare_ideal_current_apple_weight %></p>
 
@@ -11,3 +11,11 @@
   <%= link_to t('.edit_btn'), edit_weight_record_path(@weight_record), class: 'btn btn-primary' %>
   <%= link_to t('.destroy_btn'), weight_record_path(@weight_record), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: 'btn btn-primary' %>
 <% end %>
+<hr>
+<%= render 'comments/form', comment: @comment, weight_record: @weight_record %>
+
+<table class="table">
+  <tbody id="table-comment">
+    <%= render @comments %>
+  </tbody>
+</table>

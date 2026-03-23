@@ -15,5 +15,10 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
   has_secure_password
   has_many :weight_records, dependent: :destroy
-  has_many :comment, dependent: :destroy
+  has_many :comments, dependent: :destroy
+
+  # 自インスタンスと引数で渡すオブジェクトが同じか検証する
+  def own?(object)
+    id == object&.user_id
+  end
 end

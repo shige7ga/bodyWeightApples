@@ -7,7 +7,7 @@
         <%= image_tag @user.avatar_url, class: 'user-avatar rounded-circle border' %>
       </div>
     </div>
-    <div class="col-8 ">
+    <div class="col-8">
       <% if current_user?(@user) %>
         <p>メールアドレス：<%= @user.email %></p>
       <% end %>

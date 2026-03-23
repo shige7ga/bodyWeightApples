@@ -21,7 +21,12 @@ class WeightRecordsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    # コメントのインスタンス作成
+    @comment = Comment.new
+    # 体重記録に紐づくコメントを、ユーザー情報と一緒に取得(降順で)
+    @comments = @weight_record.comments.includes(:user).order(created_at: :desc)
+  end
 
   def edit; end
 
