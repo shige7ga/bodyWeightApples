@@ -10,4 +10,5 @@ class WeightRecord < ApplicationRecord
   validates :memo, length: { maximum: 2000 }
 
   belongs_to :user
+  has_many :comment, dependent: :destroy
 end
