@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [ :edit, :update, :destroy ]
+  before_action :ensure_comment_authorized, only: [ :edit, :update, :destroy ]
 
   def create
     comment = current_user.comments.build(comment_params)
@@ -32,7 +33,8 @@ class CommentsController < ApplicationController
   private
 
   def set_comment
-    @comment = Comment.find(params[:id])
+    # ログインユーザーに紐づくコメントから対象コメントを探す
+    @comment = current_user.comments.find(params[:id])
   end
 
   def comment_params
@@ -41,5 +43,9 @@ class CommentsController < ApplicationController
 
   def update_comment_params
     params.require(:comment).permit(:body)
+  end
+
+  def ensure_comment_authorized
+    ensure_correct_user(@comment.user)
   end
 end
