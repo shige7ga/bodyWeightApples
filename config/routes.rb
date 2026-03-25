@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :weight_records do
-    resources :comments, only: [ :create, :edit, :destroy ], shallow: true
+    resources :comments, only: [ :create, :edit, :update, :destroy ], shallow: true
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

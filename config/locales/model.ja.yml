@@ -50,6 +50,13 @@ ja:
     create:
       success: 'コメントを登録しました'
       danger: 'コメント登録に失敗しました'
+    update:
+      success: 'コメントを編集しました'
+      danger: 'コメントの編集に失敗しました'
+    destroy:
+      success: 'コメントを削除しました'
   flash:
     authorization:
       denied: '権限がありません'
+  messages:
+    delete_configuration: '本当に削除しますか？'
