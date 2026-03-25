@@ -19,7 +19,7 @@
             <% end %>
           </li>
           <li class="list-inline-item">
-            <%= link_to comment_path(comment), class: "delete-comment-link", data: { turbo_method: :delete, turbo_confirm: t('messages.delete_configuration') } do %>
+            <%= link_to comment_path(comment), class: "delete-comment-link", data: { turbo_method: :delete, turbo_confirm: t('messages.delete_confirmation') } do %>
               <i class="bi bi-trash-fill"></i>
             <% end %>
           </li>

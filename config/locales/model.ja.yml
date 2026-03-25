@@ -59,4 +59,4 @@ ja:
     authorization:
       denied: '権限がありません'
   messages:
-    delete_configuration: '本当に削除しますか？'
+    delete_confirmation: '本当に削除しますか？'
