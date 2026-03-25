@@ -9,7 +9,7 @@
 
 <% if current_user?(@weight_record.user) %>
   <%= link_to t('.edit_btn'), edit_weight_record_path(@weight_record), class: 'btn btn-primary' %>
-  <%= link_to t('.destroy_btn'), weight_record_path(@weight_record), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: 'btn btn-primary' %>
+  <%= link_to t('.destroy_btn'), weight_record_path(@weight_record), data: { turbo_method: :delete, turbo_confirm: t('messages.delete_confirmation') }, class: 'btn btn-primary' %>
 <% end %>
 <hr>
 <%= render 'comments/form', comment: @comment, weight_record: @weight_record %>
