@@ -3,12 +3,8 @@ class CommentsController < ApplicationController
   before_action :ensure_comment_authorized, only: [ :edit, :update, :destroy ]
 
   def create
-    comment = current_user.comments.build(comment_params)
-    if comment.save
-      redirect_to weight_record_path(comment.weight_record), success: t('.success')
-    else
-      redirect_to weight_record_path(comment.weight_record), danger: t('.danger')
-    end
+    @comment = current_user.comments.build(comment_params)
+    @comment.save
   end
 
   def edit
@@ -24,11 +20,7 @@ class CommentsController < ApplicationController
     end
   end
 
-  def destroy
-    @comment.destroy!
-    weight_record = @comment.weight_record_id
-    redirect_to weight_record_path(weight_record), status: :see_other, success: t('.success')
-  end
+  def destroy; end
 
   private
 

@@ -1,7 +1,8 @@
 <div class="mb-3">
-  <div>
+  <div id="comment-form"">
     <%= form_with model: comment, url: weight_record_comments_path(weight_record) do |f| %>
-      <%= f.text_area :body, class: "form-control mb-3", rows: "4", placeholder: Comment.human_attribute_name(:body) %>
+      <%= render 'shared/errors', object: f.object %>
+      <%= f.text_area :body, class: "form-control mb-3 mt-2", rows: "4", placeholder: Comment.human_attribute_name(:body) %>
       <%= f.submit class: "btn btn-primary" %>
     <% end %>
   </div>
