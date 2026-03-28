@@ -1,10 +1,11 @@
 # リンゴで体重管理
 
-### リンゴの個数で、日々の体重変化を記録・管理できるアプリ
-
-### 公開URL：https://applebodyweight.onrender.com/
-
-### GitHub：https://github.com/shige7ga/bodyWeightApples
+## アプリ概要
+- リンゴの個数で、日々の体重変化を記録・管理できるアプリ
+- 公開URL：https://applebodyweight.onrender.com/
+- Demoアカウント（下記情報でログインできます）
+  - メールアドレス：test@test.jp
+  - パスワード：testpass
 
 ## ミニアプリを作成した理由
 - 「自分の体重はリンゴだと何個分だろう？」という興味を引くフックを通じて、体重管理を気軽に始められるようにしたかった
