@@ -16,7 +16,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to users_path, success: t(".success")
+      session[:user_id] = @user.id
+      redirect_to user_path(@user), success: t(".success")
     else
       flash.now[:danger] = t(".danger")
       render "new", status: :unprocessable_entity
