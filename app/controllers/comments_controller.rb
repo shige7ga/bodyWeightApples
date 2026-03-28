@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(update_comment_params)
-      redirect_to weight_record_path(@comment.weight_record), success: t('.success')
+      redirect_to weight_record_path(@comment.weight_record), success: t(".success")
     else
       flash.now[:danger] = t(".danger")
       render "edit", status: :unprocessable_entity
