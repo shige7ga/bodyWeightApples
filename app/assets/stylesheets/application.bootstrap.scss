@@ -1,10 +1,20 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
+body {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
 // アバター画像用の設定
 .user-avatar {
   width: 80px;
   height: 80px;
   object-fit: cover;
   object-position: center;
+}
+
+// Topページのイメージ画像
+#top_image {
+  max-width: 25%;
+  height: auto;
 }
