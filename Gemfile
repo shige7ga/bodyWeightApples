@@ -38,7 +38,7 @@ gem "bootsnap", require: false
 
 gem "rails-i18n", "~> 7.0"
 
-gem "draper", "4.0.2"
+gem "draper", "4.0.6"
 
 gem "carrierwave", "2.2.2"
 
